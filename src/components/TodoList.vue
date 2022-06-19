@@ -6,10 +6,10 @@
         <div class="d-flex align-items-center flex-grow-1">
           <input
             type="checkbox"
-            :value="todo.completed"
+            :checked="todo.completed"
             @change="toggleTodo(index)"
           />
-          <label :class="{todoName: todo.completed}">
+          <label :class="{'todoName': todo.completed}">
             {{todo.subject}}
           </label>
         </div>
@@ -49,5 +49,8 @@ export default {
 </script>
 
 <style scoped>
-
+.todoName {
+  text-decoration: line-through;
+  color: #888;
+}
 </style>
